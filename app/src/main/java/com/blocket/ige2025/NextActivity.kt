@@ -44,11 +44,9 @@ class NextActivity : ComponentActivity() {
 
     @Preview(showBackground = true)
     @Composable
-    fun GreetingPreview() {
+    fun Preview() {
         IGE2025Theme {
 
         }
     }
-
-
 }
