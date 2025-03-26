@@ -38,54 +38,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             IGE2025Theme {
-                Hej()
+
             }
         }
     }
 }
 
-@Composable
-fun Hej() {
-    val context = LocalContext.current
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(color = Purple800),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(40.dp),
-            horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(
-                fontSize = 30.sp,
-                text = "Hello Blocket!",
-                color = Pink200,
-            )
-            Image(
-                imageVector = ImageVector.vectorResource(R.drawable.ic_heart),
-                contentDescription = "Heart"
-            )
-            Button(
-                onClick = {
-                    val intent = Intent(context, NextActivity::class.java)
-                    context.startActivity(intent)
-                },
-                colors = ButtonDefaults.buttonColors(containerColor = Pink200)
-            ) {
-                Text(
-                    fontSize = 20.sp,
-                    text = "Let's go!",
-                    color = Purple500,
-                )
-            }
-        }
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     IGE2025Theme {
-        Hej()
+
     }
 }
