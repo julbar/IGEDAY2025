@@ -36,7 +36,33 @@ class NextActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             IGE2025Theme {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Green300),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(30.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = "Cutest cat for sale", fontSize = 40.sp, color = Green800)
+                        Image(
+                            painter = painterResource(R.drawable.cat),
+                            contentDescription = "Cutest cat"
+                        )
 
+                        var price by remember { mutableStateOf(6000) }
+
+                        Text(text = "Price: $price kr", fontSize = 30.sp, color = Green800)
+                        Button(onClick = { price += 1000 }) {
+                            Text(text = "Increase price", fontSize = 20.sp, color = Green800)
+                        }
+                        Button(onClick = { price -= 1000 }) {
+                            Text(text = "Lower price", fontSize = 20.sp, color = Green800)
+                        }
+                    }
+                }
             }
         }
     }

@@ -38,9 +38,42 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             IGE2025Theme {
-
+                Hej()
             }
         }
+    }
+}
+
+@Composable
+fun Hej(){
+
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+        .fillMaxSize()
+        .background(Pink100))
+    {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                fontSize = 30.sp,
+                text = "Hello World!",
+                color = Purple700)
+
+            Image(imageVector = ImageVector.vectorResource(R.drawable.ic_heart),
+                contentDescription = "Drawing of a heart")
+
+            val context = LocalContext.current
+            Button(onClick = {
+                val intent = Intent(context, NextActivity::class.java)
+                context.startActivity(intent)
+            }) {
+                Text(text = "Let's go!", color = Blue800, fontSize = 25.sp)
+            }
+        }
+
     }
 }
 
@@ -49,6 +82,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Preview() {
     IGE2025Theme {
-
+        Hej()
     }
 }
